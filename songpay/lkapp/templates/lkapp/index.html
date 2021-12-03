@@ -1,0 +1,31 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h3 class="kits_block_title">
+            <i>Ваши аранжировки</i>
+            <span>{{ arrange.count }}</span>
+        </h3>
+
+        <div class="all_products">
+            <div class="products">
+                <div class="row grid">
+                    {% for item in arrange %}
+                        <div class="item">
+                            <a href="{% url 'mainapp:page_sound' item.id %}">
+                                {% if item.arrangement.cover %}
+                                    <img src="{{ item.arrangement.cover.url }}" width="200" height="200"
+                                         alt="{{ item.arrangement.name }}">
+                                {% endif %}
+                                <h3>{{ item.arrangement.name }}</h3>
+                            </a>
+                            <span class="btn-download"><a href="{{ item.arrangement.archive.url }}" download=""
+                                                          class="btn-download">Скачать Архив</a></span>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="page cart_page">
+        <div class="container">
+            <h3 class="inner_title">Корзина</h3>
+            <div class="inner_page">
+                {% if items %}
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>Изображение</th>
+                            <th>Название</th>
+                            <th>Цена</th>
+                            <th class="cart_page_kit_remove_section">Действие</th>
+                        </tr>
+                        {% for item in items %}
+                            <tr class="item-{{ item.id }}">
+                                <td>
+                                    <img src="{{ item.arrangement.cover.url }}" width="50" height="50">
+                                </td>
+                                <td>
+                                    <span class="cart_page_kit_name"><a
+                                            href="{% url 'mainapp:page_sound' item.arrangement.id %}" target="_blank">{{ item.arrangement.name }}</a></span>
+                                </td>
+                                <td>
+                                    <span class="cart_page_kit_cost">{{ item.arrangement.price }}</span>
+                                </td>
+                                <td class="cart_page_kit_remove_section">
+                                    <a href="{% url 'basketapp:remove_cart' item.id %}" class="cart_page_kit_remove">
+                                        <svg height="24" viewBox="0 0 24 24" width="24"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path class="heroicon-ui"
+                                                  d="M8 6V4c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2h5a1 1 0 0 1 0 2h-1v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8H3a1 1 0 1 1 0-2h5zM6 8v12h12V8H6zm8-2V4h-4v2h4zm-4 4a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1z"></path>
+                                        </svg>
+                                    </a>
+                                    {#                                    <a href="{% url 'lkapp:buy_sound' item.id %}" class="cart_page_kit_buy">#}
+                                    {#                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"#}
+                                    {#                                             viewBox="0 0 24 24" stroke="currentColor">#}
+                                    {#                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"#}
+                                    {#                                                  d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"/>#}
+                                    {#                                        </svg>#}
+                                    {#                                    </a>#}
+                                </td>
+
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="cart_page_bottom">
+                        <h3>Всего: <span id="all_count"></span></h3>
+                        <div class="cart_page_form">
+                            <form action="paywall/paywall.php" method="post">
+                                <input type="hidden" value="30" name="cart_page_total_sum">
+                                <input class="cart_page_email" id="paymail" name="cart_page_email" placeholder="E-mail">
+                                <span id="valid_message"></span>
+                                <button type="submit" id="gopay" class="cart_page_continue" disabled="disabled">Перейти
+                                    к
+                                    оплате
+                                </button>
+                            </form>
+                        </div>
+                        <!-- /.cart_page_form -->
+                    </div>
+                {% else %}
+                    <div class="message empty">
+                        <h3>Ох, нет...</h3>
+                        <span>Корзина пуста...</span>
+                        <div class="message_icon">
+                            <svg viewbox="0 0 24 24" width="72" height="72" stroke="currentColor" stroke-width="2"
+                                 fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                        </div>
+                        <!-- /.message_icon -->
+                        <p>
+                            Вернитесь на главную страницу и добавьте то, что вас интересует, в корзину.
+                        </p>
+                        <a href="{% url 'mainapp:index' %}">
+                            <span>Вернуться</span>
+                            <i>
+                                <svg viewbox="0 0 24 24" width="56" height="56" stroke="currentColor" stroke-width="2"
+                                     fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                            </i>
+                        </a>
+                    </div>
+                {% endif %}
+
+
+                <!-- /.message -->
+            </div>
+            <!-- /.inner-page -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <script>
+
+    </script>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="page">
+        <div class="container">
+            <div class="kit_discover">
+                <div class="kit_discover_info">
+                    <div class="kit_discover_pic">
+                        <img src="{{ select.cover.url }}" width="280" height="280">
+                        {% if not order.arrangement %}
+                            <a class="kit_discover_add isnt_freebie" kit_id="{{ select.id }}">
+                                В корзину
+                            </a>
+                        {% else %}
+                            <a class="kit_discover_add" href="{{ order.archive.url }}">
+                                Скачать архив
+                            </a>
+                        {% endif %}
+                    </div>
+                    <!-- /.kit_discover_pic -->
+                    <div class="kit_actions">
+                        <h3>{{ select.name }}</h3>
+                        <div class="kit_discover_cost">
+                            <p>
+                                <span class="kit_discover_cost_sub">{{ select.price }} &#8381;</span>
+                            </p>
+                        </div>
+                        <!-- /.kit_discover_cost_sub -->
+                        <div class="kit_discover_description">
+                            <p>
+                                {% if select.original_name %}
+                                    {{ select.original_name }}
+                                {% else %}
+                                    Авторская аранжировка
+                                {% endif %}
+                                <br><br>
+                            <ul class="kit_includes">
+                                <li>Тональность: {{ select.key }}</li>
+                                <li>Категория: {{ select.category }}</li>
+                            </ul>
+                            {% if not order %}
+                                <h3 class="mt-1">Вы получите архив:</h3>
+                                <div class="kit_counters_block">
+                                    <div class="kit_counters_block_item kit_files_counter">
+                                        <span>Демо с вокалом</span>
+                                        <i>(MP3; 320kbps)</i>
+                                    </div>
+                                    <!-- /.kit_counters_block_item -->
+                                    <div class="kit_counters_block_item kit_files_size">
+                                        <span>Минусовка</span>
+                                        <i>(WAV; 24 bit; 44khz)</i>
+                                    </div>
+                                    <!-- /.kit_counters_block_item -->
+                                    {#                                <div class="kit_counters_block_item kit_compatible">#}
+                                    {#                                    <span>Текст песни</span>#}
+                                    {#                                    <!-- Compatible With Any DAW (Fruity Loops, Pro Tools, Reason, Logic, Ableton, etc) -->#}
+                                    {#                                </div>#}
+                                </div>
+                            {% endif %}
+                            <div id="player" class="mt-1"></div>
+                            {% if select.text %}
+                                <h3 class="mt-1">Текст песни:</h3>
+                                <p>{{ select.text|linebreaksbr }}</p>
+                            {% endif %}
+
+                        </div>
+                        <!-- /.kit_discover_description -->
+                    </div>
+                    <!-- /.kit_actions -->
+                </div>
+            </div>
+            <!-- /.kit_discover -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <script>
+        let player = new Playerjs({
+            id: "player",
+            poster: '{{ select.cover.url }}',
+            title: '{{ select.name }} | {{ select.key }} | {{ select.price }} &#8381;',
+            file: "{{select.audioFile.url}}"
+        });
+    </script>
+    <!-- /.page -->
+{% endblock %}

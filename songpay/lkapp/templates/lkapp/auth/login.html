@@ -1,0 +1,33 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="page cart_page">
+        <div class="container">
+            <h3 class="inner_title">Войти в аккаунт</h3>
+            <div class="inner-page support">
+                <div class="support-main">
+                    <div class="side">
+                        <p>Для доступа к своим аранжировкам, требуется авторизация</p>
+                        <p>Нет аккаунта - <a href="{% url 'lkapp:register' %}" class="btn btn-success">Создать</a></p>
+                    </div>
+                    <!-- /.side -->
+                    <div class="side">
+                        <div class="support_form">
+                            <form>
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button class="blue-button send" name="submit">Войти</button>
+                            </form>
+                        </div>
+
+                        <!-- /.support_form -->
+                    </div>
+                    <!-- /.side -->
+                </div>
+                <!-- /.support-main -->
+            </div>
+            <!-- /.inner-page -->
+        </div>
+        <!-- /.container -->
+    </div>
+{% endblock %}

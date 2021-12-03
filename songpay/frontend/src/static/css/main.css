@@ -1,0 +1,72 @@
+* {
+    font-family: 'Nunito', sans-serif;
+    background-color: #F7F8FC;
+    font-size: 18px;
+}
+
+.card-title {
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+    margin: 25px 0 10px 0;
+    text-decoration: none;
+}
+
+.card {
+    width: calc(25% - 50px);
+    border: none;
+    height: calc(25% - 50px);
+    margin: 0 40px 40px 0;
+}
+
+.card img {
+    transition: all 0.3s ease-in-out;
+}
+
+h3 {
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+}
+
+.card img:hover {
+    transform: translateY(-15px);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 8px #c4c4c4;
+}
+
+.card-body {
+    padding: 1rem 0;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.col .card-img-top{
+    width: 280px;
+    height: 280px;
+}
+
+.link_gray {
+    color: #808080;
+    transition: .3s ease-in-out;
+}
+
+.link_gray:hover, .link_gray:active, .link_gray:focus {
+    color: #212529;
+    transition: .3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #448AFF;
+    border: none;
+}
+
+

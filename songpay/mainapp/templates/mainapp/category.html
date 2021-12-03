@@ -1,0 +1,28 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h3 class="kits_block_title">
+            <i>Все категории</i>
+            <span>{{ category.count }}</span>
+        </h3>
+        <!-- /.kits_settings -->
+
+        <div class="all_products">
+            <div class="products">
+                <div class="row grid">
+                    {% for item in category %}
+                        <div class="item">
+                            <a href="{% url 'mainapp:page_category' item.id %}">
+                                <h3>{{ item.name }}</h3>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.products -->
+        </div>
+        <!-- /.all_products -->
+    </div>
+{% endblock %}

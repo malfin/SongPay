@@ -1,0 +1,31 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="page cart_page">
+        <div class="container">
+            <h3 class="inner_title">Поддержка</h3>
+            <div class="inner-page support">
+                <div class="support-main">
+                    <div class="side">
+                        <p>
+                            Если у вас есть вопросы или идеи - заполните эту форму и отправьте!</p>
+                        <p>Мы свяжемся с вами в ближайшее время, если это будет необходимо.</p>
+
+                        <p>
+                            Спасибо, что выбрали нас!
+                        </p>
+                    </div>
+                    <!-- /.side -->
+                    <div class="side">
+                        <div class="support_form">
+                            <input type="text" name="email" placeholder="E-mail" id="email">
+                            <textarea name="message" id="message" placeholder="Ваше сообщение"
+                                      style="overflow: hidden; overflow-wrap: break-word; height: 44px;"></textarea>
+                            <button type="submit" class="blue-button" name="submit">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

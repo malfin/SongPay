@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="page cart_page">
+        <div class="container">
+            <h3 class="inner_title">Регистрация</h3>
+            <div class="inner-page support">
+                <div class="support-main">
+                    <div class="side">
+                        <p>Регистрация нового пользователя</p>
+                    </div>
+                    <div class="side">
+                        <div class="support_form">
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button class="blue-button register" name="submit">Регистрация</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'Lyyra Standard';
+    src: url('../fonts/LyyraStandard-Medium.eot');
+    src: local('Lyyra Standard Medium'), local('LyyraStandard-Medium'),
+        url('../fonts/LyyraStandard-Medium-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraStandard-Medium.woff2.html') format('woff2'),
+        url('../fonts/LyyraStandard-Medium.woff.html') format('woff'),
+        url('../fonts/LyyraStandard-Medium.ttf.html') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Expanded';
+    src: url('../fonts/LyyraExpanded-Black.eot');
+    src: local('Lyyra Expanded Black'), local('LyyraExpanded-Black'),
+        url('../fonts/LyyraExpanded-Black-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExpanded-Black.woff2.html') format('woff2'),
+        url('../fonts/LyyraExpanded-Black.woff.html') format('woff'),
+        url('../fonts/LyyraExpanded-Black.ttf.html') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Standard';
+    src: url('../fonts/LyyraStandard-Light.eot');
+    src: local('Lyyra Standard Light'), local('LyyraStandard-Light'),
+        url('../fonts/LyyraStandard-Light-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraStandard-Light.woff2.html') format('woff2'),
+        url('../fonts/LyyraStandard-Light.woff.html') format('woff'),
+        url('../fonts/LyyraStandard-Light.ttf.html') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Expanded';
+    src: url('../fonts/LyyraExpanded-Light.eot');
+    src: local('Lyyra Expanded Light'), local('LyyraExpanded-Light'),
+        url('../fonts/LyyraExpanded-Light-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExpanded-Light.woff2.html') format('woff2'),
+        url('../fonts/LyyraExpanded-Light.woff.html') format('woff'),
+        url('../fonts/LyyraExpanded-Light.ttf.html') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Standard';
+    src: url('../fonts/LyyraStandard-Regular.eot');
+    src: local('Lyyra Standard Regular'), local('LyyraStandard-Regular'),
+        url('../fonts/LyyraStandard-Regular-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraStandard-Regular.woff2.html') format('woff2'),
+        url('../fonts/LyyraStandard-Regular.woff.html') format('woff'),
+        url('../fonts/LyyraStandard-Regular.ttf.html') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Extended';
+    src: url('../fonts/LyyraExtended-Regular.eot');
+    src: local('Lyyra Extended Regular'), local('LyyraExtended-Regular'),
+        url('../fonts/LyyraExtended-Regular-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExtended-Regular.woff2.html') format('woff2'),
+        url('../fonts/LyyraExtended-Regular.woff.html') format('woff'),
+        url('../fonts/LyyraExtended-Regular.ttf.html') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Standard';
+    src: url('../fonts/LyyraStandard-Black.eot');
+    src: local('Lyyra Standard Black'), local('LyyraStandard-Black'),
+        url('../fonts/LyyraStandard-Black-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraStandard-Black.woff2.html') format('woff2'),
+        url('../fonts/LyyraStandard-Black.woff.html') format('woff'),
+        url('../fonts/LyyraStandard-Black.ttf.html') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Expanded';
+    src: url('../fonts/LyyraExpanded-Bold.eot');
+    src: local('Lyyra Expanded Bold'), local('LyyraExpanded-Bold'),
+        url('../fonts/LyyraExpanded-Bold-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExpanded-Bold.woff2.html') format('woff2'),
+        url('../fonts/LyyraExpanded-Bold.woff.html') format('woff'),
+        url('../fonts/LyyraExpanded-Bold.ttf.html') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Extended';
+    src: url('../fonts/LyyraExtended-Bold.eot');
+    src: local('Lyyra Extended Bold'), local('LyyraExtended-Bold'),
+        url('../fonts/LyyraExtended-Bold-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExtended-Bold.woff2.html') format('woff2'),
+        url('../fonts/LyyraExtended-Bold.woff.html') format('woff'),
+        url('../fonts/LyyraExtended-Bold.ttf.html') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Expanded';
+    src: url('../fonts/LyyraExpanded-Regular.eot');
+    src: local('Lyyra Expanded Regular'), local('LyyraExpanded-Regular'),
+        url('../fonts/LyyraExpanded-Regular-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExpanded-Regular.woff2.html') format('woff2'),
+        url('../fonts/LyyraExpanded-Regular.woff.html') format('woff'),
+        url('../fonts/LyyraExpanded-Regular.ttf.html') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Standard';
+    src: url('../fonts/LyyraStandard-Bold.eot');
+    src: local('Lyyra Standard Bold'), local('LyyraStandard-Bold'),
+        url('../fonts/LyyraStandard-Bold-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraStandard-Bold.woff2.html') format('woff2'),
+        url('../fonts/LyyraStandard-Bold.woff.html') format('woff'),
+        url('../fonts/LyyraStandard-Bold.ttf.html') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Expanded';
+    src: url('../fonts/LyyraExpanded-Medium.eot');
+    src: local('Lyyra Expanded Medium'), local('LyyraExpanded-Medium'),
+        url('../fonts/LyyraExpanded-Medium-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExpanded-Medium.woff2.html') format('woff2'),
+        url('../fonts/LyyraExpanded-Medium.woff.html') format('woff'),
+        url('../fonts/LyyraExpanded-Medium.ttf.html') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Extended';
+    src: url('../fonts/LyyraExtended-Medium.eot');
+    src: local('Lyyra Extended Medium'), local('LyyraExtended-Medium'),
+        url('../fonts/LyyraExtended-Medium-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExtended-Medium.woff2.html') format('woff2'),
+        url('../fonts/LyyraExtended-Medium.woff.html') format('woff'),
+        url('../fonts/LyyraExtended-Medium.ttf.html') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Extended';
+    src: url('../fonts/LyyraExtended-Black.eot');
+    src: local('Lyyra Extended Black'), local('LyyraExtended-Black'),
+        url('../fonts/LyyraExtended-Black-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExtended-Black.woff2.html') format('woff2'),
+        url('../fonts/LyyraExtended-Black.woff.html') format('woff'),
+        url('../fonts/LyyraExtended-Black.ttf.html') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyyra Extended';
+    src: url('../fonts/LyyraExtended-Light.eot');
+    src: local('Lyyra Extended Light'), local('LyyraExtended-Light'),
+        url('../fonts/LyyraExtended-Light-1.eot') format('embedded-opentype'),
+        url('../fonts/LyyraExtended-Light.woff2.html') format('woff2'),
+        url('../fonts/LyyraExtended-Light.woff.html') format('woff'),
+        url('../fonts/LyyraExtended-Light.ttf.html') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}

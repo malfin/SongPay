@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title|capfirst }}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--    <link href="css2.css?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">-->
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jsmartresize.js' %}"></script>
+    <script src="{% static 'js/jcsabfix.js' %}"></script>
+    <script src="{% static 'js/filters.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/notyf.min.css' %}">
+    <script src="{% static 'js/notyf.min.js' %}"></script>
+    <script src="{% static 'js/playerjs.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div class="navigation_panel">
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'mainapp:index' %}">Главная</a>
+            </li>
+            <li>
+                <a href="{% url 'mainapp:support' %}">Поддержка</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<!-- /.navigation_panel -->
+<header>
+    <div class="container">
+        <a href="{% url 'mainapp:index' %}" class="logo"></a>
+        <nav>
+            <ul>
+
+                <li>
+                    <a href="{% url 'mainapp:index' %}">Главная</a>
+                </li>
+                <li>
+                    <a href="{% url 'mainapp:support' %}">Поддержка</a>
+                </li>
+                <li>
+                    <a href="{% url 'mainapp:category' %}">Каталог</a>
+                </li>
+                <li>
+                    <a href="{% url 'lkapp:index' %}">Личный кабинет {% if user.is_authenticated %}
+                        | {{ user.first_name }}
+                    {% endif %} </a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'lkapp:logout' %}">Выйти</a>
+                    </li>
+                {% endif %}
+                {#                <li>#}
+                {#                    <a href="{% url 'mainapp:category' %}">Категории</a>#}
+                {#                </li>#}
+                <!--                <li class="categories_trigger">-->
+                <!--                    <a href="#">Магазин</a>-->
+                <!--                    <ul>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">All Kits</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Drum Kits</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">One Shots</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Midi Kits</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">Loops & Samples</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">VST Expansions</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="#">GFX Design Kits</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <!-- /.hamburger -->
+        <div class="side">
+            {#            <div id="change_tmp">#}
+            {#                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"#}
+            {#                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"#}
+            {#                     class="feather feather-moon">#}
+            {#                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>#}
+            {#                </svg>#}
+            {#            </div>#}
+            <!-- /#change_tmp -->
+            <div class="cart changeable">
+                <i></i>
+                <span>0</span>
+                <a href="{% url 'basketapp:cart' %}"></a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="middle">
+    {% block content %}
+
+    {% endblock %}
+</div>
+<footer>
+    <div class="container">
+        <div class="copyright">
+            <h3>© 2021 </h3>
+            <span>All rights reserved.</span>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <h3>Company</h3>
+                </li>
+                <li>
+                    <a href="">Support service</a>
+                </li>
+                <li>
+                    <a href="">Terms of service</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <h3>Social</h3>
+                </li>
+                <li>
+                    <a href="">Instagram</a>
+                </li>
+                <li>
+                    <a href="">YouTube</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="side">
+            <a href="#" class="mail">hello@drumdealer.net</a>
+            <p class="secure">
+                Secure payments via <span class="paypal"></span>
+            </p>
+        </div>
+    </div>
+</footer>
+<script>
+    {% for item in messages %}
+        notyf.{% if item.tags %}{{ item.tags }}("{{ item }}"){% endif %};
+    {% endfor %}
+</script>
+</body>
+</html>

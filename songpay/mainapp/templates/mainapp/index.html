@@ -1,0 +1,41 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h3 class="kits_block_title">
+            <i>Все аранжировки</i>
+            <span>{{ arrangement.count }}</span>
+        </h3>
+        <!-- /.kits_settings -->
+        <div class="inner-page support" style="margin: 10px">
+            <div class="support-main" style="justify-content: center;
+    margin: 10px 0 0 0;">
+                <div class="side">
+                    <div class="support_form">
+                        <input type="text" placeholder="Поиск (по автору, по названию аранжировки)" id="search">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="all_products">
+            <div class="products">
+                <div class="row grid">
+                    {% for item in arrangement %}
+                        <div class="item">
+                            <a href="{% url 'mainapp:page_sound' item.pk %}">
+                                {% if item.cover %}
+                                    <img src="{{ item.cover.url }}" width="200" height="200" alt="{{ item.name }}">
+                                {% endif %}
+                                <h3>{{ item.name }}</h3>
+                                <span>{{ item.price }} &#8381;</span>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.products -->
+        </div>
+        <!-- /.all_products -->
+    </div>
+{% endblock %}

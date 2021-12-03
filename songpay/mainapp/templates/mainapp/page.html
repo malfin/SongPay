@@ -1,0 +1,61 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h3 class="kits_block_title">
+            <i>Все аранжировки</i>
+            <span>{{ select.count }}</span>
+        </h3>
+
+        <div class="all_products">
+            {% if select %}
+                <div class="products">
+                    <div class="row grid">
+
+                        {% for item in select %}
+                            <div class="item">
+                                <a href="{% url 'mainapp:page_sound' item.id %}">
+                                    {% if item.cover %}
+                                        <img src="{{ item.cover.url }}" width="200" height="200" alt="{{ item.name }}">
+                                    {% endif %}
+                                    <h3>{{ item.name }} <br> {{ item.original_name }}</h3>
+                                    <span>{{ item.price }} &#8381;</span>
+                                </a>
+                            </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="message empty">
+                            <h3>Ох, нет...</h3>
+                            <span>В данной категории нету аранжировок</span>
+                            <div class="message_icon">
+                                <svg viewbox="0 0 24 24" width="72" height="72" stroke="currentColor" stroke-width="2"
+                                     fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
+                                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                                </svg>
+                            </div>
+                            <!-- /.message_icon -->
+                            <p>
+                                Вернитесь на страницу c каталогом.
+                            </p>
+                            <a href="{% url 'mainapp:category' %}">
+                                <span>Вернуться</span>
+                                <i>
+                                    <svg viewbox="0 0 24 24" width="56" height="56" stroke="currentColor"
+                                         stroke-width="2"
+                                         fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
