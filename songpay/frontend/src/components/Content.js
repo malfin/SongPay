@@ -23,7 +23,7 @@ function Content() {
         <Fragment>
             <h3>Все аранжировки</h3>
             {!loading &&
-            <div className="d-flex justify-content-start flex-wrap">
+            <div className="d-flex justify-content-between flex-wrap">
                 <CardsList cards={cards}/>
             </div>
             }

@@ -14,6 +14,7 @@ import Error404 from "./page/Error404";
 import Category from "./page/Category";
 import axios from "axios";
 import ArrangementID from "./page/ArrangementID";
+import Basket from "./page/Basket";
 
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
                     </Route>
                     <Route exact path="/catalog">
                         <Category/>
+                    </Route>
+                    <Route exact path="/basket">
+                        <Basket/>
                     </Route>
                     <Route exact path="/arrangement/:id">
                         <ArrangementID card={cards}/>
