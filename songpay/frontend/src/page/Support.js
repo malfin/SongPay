@@ -5,6 +5,7 @@ const Support = () => {
     const [email, setEmail] = useState('');
     const [messages, setMessages] = useState('');
     const [send, setSend] = useState(false);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         document.title = 'Поддержка';
@@ -13,12 +14,13 @@ const Support = () => {
     function handleSubmit(e) {
         e.preventDefault();
         axios.post(`http://127.0.0.1:8000/api/v1/support/`, {email: email, messages: messages})
-            .then(res => {
-                console.log(res);
-                console.log(res.data);
+            .then(() => {
                 setSend(true)
                 setEmail('')
                 setMessages('')
+            })
+            .catch(() => {
+                setError(true)
             })
 
     }
@@ -36,6 +38,11 @@ const Support = () => {
                     {send &&
                         <div className="alert alert-success" role="alert">
                             Ваше обращение успешно отправлено!
+                        </div>
+                    }
+                    {error &&
+                        <div className="alert alert-danger" role="alert">
+                            Сервер не доступен
                         </div>
                     }
                     <form method="post" onSubmit={handleSubmit}>
