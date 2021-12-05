@@ -20,7 +20,7 @@ const ArrangementID = ({card}) => {
                 <div className="col">
                     <h1>{sound.name}</h1>
                     <h3 className="text-primary">{sound.price} руб.</h3>
-                    <h5>{sound.original_name ? `${sound.original_name}` : 'Авторская аранжировка'}</h5>
+                    <h5>{sound.original_name ? sound.original_name : 'Авторская аранжировка'}</h5>
                     <h5>Тональность: {sound.key.key}</h5>
                     <h5>Категория: {sound.category.name}</h5>
                     <div className="mt-4">

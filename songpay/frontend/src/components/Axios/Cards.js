@@ -6,8 +6,12 @@ const Cards = ({arrangement}) => {
         <div className="card">
             <img src={arrangement.cover} className="card-img-top" alt={arrangement.name}/>
             <div className="card-body">
-                <Link to={`/arrangement/${arrangement.id}`} className="card-title">{arrangement.name} | {arrangement.key.key}</Link>
+                <Link to={`/arrangement/${arrangement.id}`}
+                      className="card-title">{arrangement.name} | {arrangement.key.key}</Link>
                 <p className="card-text">{arrangement.price} руб.</p>
+            </div>
+            <div className="card-footer">
+                {arrangement.original_name ? arrangement.original_name : 'Авторская аранжировка'}
             </div>
         </div>
     )
