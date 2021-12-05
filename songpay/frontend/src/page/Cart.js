@@ -1,11 +1,16 @@
 import {Fragment, useEffect} from "react";
 import {useCart} from "react-use-cart";
 
+import empty_cart from '../static/img/empty-cart.png'
+
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
-const MySwal = withReactContent(Swal)
+import {EmojiProvider, Emoji} from 'react-apple-emojis'
+import emojiData from 'react-apple-emojis/lib/data.json'
+import {Link} from "react-router-dom";
 
+const MySwal = withReactContent(Swal)
 
 const Cart = () => {
     useEffect(() => {
@@ -28,11 +33,24 @@ const Cart = () => {
         })
     }
 
+
     return (
         <Fragment>
             <h3>Корзина</h3>
             {isEmpty ?
-                <h3>Ваша корзина пуста!</h3> :
+                <div className="text-center">
+                    <h3>Корзина пустая
+                        <EmojiProvider data={emojiData}>
+                            <Emoji name="winking-face" className="m-2" style={{width: 34}}/>
+                        </EmojiProvider>
+
+                    </h3>
+                    <p>Вероятней всего, вы не заказывали ещё аранжировку.</p>
+                    <p>Для того, чтобы заказать аранжировку, перейди на <Link to={"/"}
+                                                                              className="text-primary text-decoration-none">главную
+                        страницу</Link>.</p>
+                    <img src={empty_cart} alt="Пустая корзина"/>
+                </div> :
                 <div>
                     <table className="table">
                         <thead>
