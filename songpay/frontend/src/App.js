@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap'
 
 import './static/css/main.css'
-import './static/css/theme.css'
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -24,6 +23,7 @@ function App() {
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(true);
 
+
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/v1/arrangement/')
             .then((result) => {
@@ -35,6 +35,7 @@ function App() {
     return (
         <div className="container">
             <Router>
+
                 <Header/>
                 <Switch>
                     <Route exact path="/">

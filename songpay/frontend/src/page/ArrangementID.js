@@ -23,6 +23,14 @@ const ArrangementID = ({card}) => {
                     <h5>{sound.original_name ? sound.original_name : 'Авторская аранжировка'}</h5>
                     <h5>Тональность: {sound.key.key}</h5>
                     <h5>Категория: {sound.category.name}</h5>
+                    <div className="mt-4 border-bottom">
+                        <h5>Вы получите (архив):</h5>
+                        <ol className="list-group list-group-numbered">
+                            <li className="list-group-item">Аранжировка</li>
+                            <li className="list-group-item">Текст</li>
+                            <li className="list-group-item">Демо с вокалом</li>
+                        </ol>
+                    </div>
                     <div className="mt-4">
                         <h5>Демо запись:</h5>
                         <AudioPlayer
@@ -32,9 +40,7 @@ const ArrangementID = ({card}) => {
                     </div>
                     <div className="mt-4">
                         <h1>Текст песни</h1>
-
                         <pre>{sound.text}</pre>
-
                     </div>
                 </div>
             </div>

@@ -1,12 +1,62 @@
+:root {
+    --bg-ligt: #f7f8fc;
+    --card-color: #000;
+    --box-shadow: #c4c4c4;
+    --btn-primary: #448AFF;
+    --link-gray: #808080;
+    --link-gray-hover: #fff;
+    --while: #fff;
+    --color: #212529;
+}
+
+[data-theme="dark"] {
+    --bg-ligt: #212529;
+    --color: #fff;
+    --link-gray-hover: #212529;
+}
+
 * {
     font-family: 'Nunito', sans-serif;
-    background-color: #F7F8FC;
+    background-color: var(--bg-ligt);
     font-size: 18px;
+    color: var(--color);
+}
+
+
+.rhap_container {
+    padding: 0 15px !important;
+    background-color: var(--bg-ligt) !important;
+}
+
+.rhap_time {
+    color: var(--color) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: var(--btn-primary);
+}
+
+.list-group-item {
+    background-color: var(--bg-ligt);
+    color: var(--color);
+    border: none;
+}
+
+.bg-light {
+    background-color: var(--bg-ligt) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--color);
+}
+
+svg {
+    fill: var(--while);
 }
 
 .card-title {
     font-size: 18px;
-    color: #000;
+    color: var(--color);
     font-weight: 700;
     margin: 25px 0 10px 0;
     text-decoration: none;
@@ -17,6 +67,7 @@
     border: none;
     height: calc(25% - 50px);
     margin: 0 40px 40px 0;
+    background-color: var(--link-gray-hover) !important;
 }
 
 .card img {
@@ -30,7 +81,7 @@ h3 {
 
 .card-footer {
     padding: 5px 0;
-    background-color: #F7F8FC;
+    background-color: var(--bg-ligt);
     border-top: none;
 }
 
@@ -42,7 +93,7 @@ textarea {
 .card img:hover {
     transform: translateY(-15px);
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 2px 8px #c4c4c4;
+    box-shadow: 0 2px 8px var(--box-shadow);
 }
 
 .card-body {
@@ -61,27 +112,27 @@ textarea {
 }
 
 .link_gray {
-    color: #808080;
+    color: var(--link-gray);
     transition: .3s ease-in-out;
 }
 
 .link_gray:hover, .link_gray:active, .link_gray:focus {
-    color: #212529;
+    color: var(--link-gray-hover);
     transition: .3s ease-in-out;
 }
 
 a {
-    color: #fff;
+    color: var(--while);
     transition: all .3s ease-in-out;
 }
 
 a:hover {
-    color: #448aff;
+    color: var(--btn-primary);
     transition: all .3s ease-in-out;
 }
 
 .btn-primary {
-    background-color: #448AFF;
+    background-color: var(--btn-primary);;
     border: none;
 }
 
