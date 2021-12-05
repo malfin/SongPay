@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import axios from "axios";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 
@@ -13,7 +14,6 @@ import Content from "./components/Content";
 import Support from "./page/Support";
 import Error404 from "./page/Error404";
 import Category from "./page/Category";
-import axios from "axios";
 import ArrangementID from "./page/ArrangementID";
 import Basket from "./page/Basket";
 

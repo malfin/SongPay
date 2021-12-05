@@ -15,6 +15,14 @@
     --link-gray-hover: #212529;
 }
 
+.swal2-title, .swal2-html-container {
+    background: none !important;
+}
+
+.swal2-styled.swal2-confirm {
+    background: var(--btn-primary) !important;
+}
+
 * {
     font-family: 'Nunito', sans-serif;
     background-color: var(--bg-ligt);

@@ -1,11 +1,18 @@
 import React, {Fragment, useEffect, useState} from "react";
 import axios from "axios";
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
+const MySwal = withReactContent(Swal)
+
 const Support = () => {
     const [email, setEmail] = useState('');
     const [messages, setMessages] = useState('');
     const [send, setSend] = useState(false);
     const [error, setError] = useState(false);
+
 
     useEffect(() => {
         document.title = 'Поддержка';
@@ -18,11 +25,23 @@ const Support = () => {
                 setSend(true)
                 setEmail('')
                 setMessages('')
+                if (!send) {
+                    MySwal.fire({
+                        title: '<h3 style="background: none">Успешно</h3>',
+                        text: 'Ваше сообщение отправлено!',
+                    })
+                }
             })
             .catch(() => {
                 setError(true)
-            })
+                if (!error) {
+                    MySwal.fire({
+                        title: '<h3 style="background: none">Ошибка</h3>',
+                        text: 'Сервер не доступен!',
+                    })
+                }
 
+            })
     }
 
     return (
@@ -35,16 +54,6 @@ const Support = () => {
                     <p>Спасибо, что выбрали нас!</p>
                 </div>
                 <div className="col">
-                    {send &&
-                        <div className="alert alert-success" role="alert">
-                            Ваше обращение успешно отправлено!
-                        </div>
-                    }
-                    {error &&
-                        <div className="alert alert-danger" role="alert">
-                            Сервер не доступен
-                        </div>
-                    }
                     <form method="post" onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
