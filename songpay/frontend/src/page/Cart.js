@@ -55,14 +55,14 @@ const Cart = () => {
                             </tr>))}
                         </tbody>
                     </table>
-                    <button className="btn btn-danger" onClick={() => RemoveAllCart()}>Очистить корзину</button>
+                    <button className="btn-lg btn-danger mb-3" onClick={() => RemoveAllCart()}>Очистить корзину</button>
                     <div className="row">
                         <div className="col">
                             <h3>Всего товара: {totalUniqueItems}</h3>
                         </div>
                         <div className="col">
                             <h3>К оплате: {cartTotal} руб.</h3>
-                            <button className="btn-lg btn-primary">Оплатить</button>
+                            <span className="text-primary">Перейдти к оплате</span>
                         </div>
                     </div>
                 </div>

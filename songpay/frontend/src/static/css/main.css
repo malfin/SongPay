@@ -43,6 +43,20 @@
     cursor: pointer;
 }
 
+.text-primary {
+    color: var(--btn-primary) !important;
+    transition: all .3s ease-in-out;
+}
+
+.text-primary:hover {
+    cursor: pointer;
+    padding: 10px;
+    color: #fff !important;
+    background: #448aff !important;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+
 .rhap_container {
     padding: 0 15px !important;
     background-color: var(--bg-ligt) !important;
