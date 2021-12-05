@@ -29,7 +29,9 @@ h3 {
 }
 
 .card-footer {
-    padding: 10px 0;
+    padding: 5px 0;
+    background-color: #F7F8FC;
+    border-top: none;
 }
 
 textarea {
@@ -66,6 +68,16 @@ textarea {
 .link_gray:hover, .link_gray:active, .link_gray:focus {
     color: #212529;
     transition: .3s ease-in-out;
+}
+
+a {
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+a:hover {
+    color: #448aff;
+    transition: all .3s ease-in-out;
 }
 
 .btn-primary {

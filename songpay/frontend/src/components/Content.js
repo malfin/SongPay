@@ -1,26 +1,15 @@
 import React, {Fragment, useEffect, useState} from "react";
-import axios from "axios";
 import CardsList from "./Axios/Cards";
 import MyLoader from "./Loader";
 
-function Content() {
-    const [cards, setCards] = useState([]);
+function Content({card, loading}) {
     const [search, setSearch] = useState('');
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         document.title = 'Главная';
     })
 
-    useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/v1/arrangement/')
-            .then((result) => {
-                setCards(result.data)
-                setLoading(false);
-            })
-    }, [])
-
-    const filterSearch = cards.filter(items => {
+    const filterSearch = card.filter(items => {
         return items.original_name.toLocaleLowerCase().includes(search.toLowerCase())
     })
 

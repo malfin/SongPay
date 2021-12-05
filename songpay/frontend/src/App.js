@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap'
 
 import './static/css/main.css'
+import './static/css/theme.css'
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -20,11 +22,13 @@ import Basket from "./page/Basket";
 function App() {
 
     const [cards, setCards] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/v1/arrangement/')
             .then((result) => {
                 setCards(result.data)
+                setLoading(false)
             })
     }, [])
 
@@ -34,7 +38,7 @@ function App() {
                 <Header/>
                 <Switch>
                     <Route exact path="/">
-                        <Content/>
+                        <Content card={cards} loading={loading}/>
                     </Route>
                     <Route exact path="/support">
                         <Support/>
