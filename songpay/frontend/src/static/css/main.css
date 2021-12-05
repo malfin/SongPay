@@ -46,6 +46,8 @@
 .text-primary {
     color: var(--btn-primary) !important;
     transition: all .3s ease-in-out;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .text-primary:hover {
@@ -53,7 +55,6 @@
     padding: 10px;
     color: #fff !important;
     background: #448aff !important;
-    border-radius: 10px;
     transition: all .3s ease-in-out;
 }
 

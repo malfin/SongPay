@@ -27,6 +27,7 @@ const Support = () => {
                 setMessages('')
                 if (!send) {
                     MySwal.fire({
+                        icon: "info",
                         title: '<h3 style="background: none">Успешно</h3>',
                         text: 'Ваше сообщение отправлено!',
                     })
@@ -36,6 +37,7 @@ const Support = () => {
                 setError(true)
                 if (!error) {
                     MySwal.fire({
+                        icon: "warning",
                         title: '<h3 style="background: none">Ошибка</h3>',
                         text: 'Сервер не доступен!',
                     })

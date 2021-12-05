@@ -21,6 +21,7 @@ const Cart = () => {
 
     const RemoveAllCart = () => {
         MySwal.fire({
+            icon: "question",
             title: 'Вы действительно хотите полностью очистить корзину?',
             showDenyButton: true,
             confirmButtonText: 'Да',
@@ -36,7 +37,6 @@ const Cart = () => {
 
     return (
         <Fragment>
-            <h3>Корзина</h3>
             {isEmpty ?
                 <div className="text-center">
                     <h3>Корзина пустая
@@ -48,7 +48,7 @@ const Cart = () => {
                     <p>Вероятней всего, вы не заказывали ещё аранжировку.</p>
                     <p>Для того, чтобы заказать аранжировку, перейди на <Link to={"/"}
                                                                               className="text-primary text-decoration-none">главную
-                        страницу</Link>.</p>
+                        страницу</Link></p>
                     <img src={empty_cart} alt="Пустая корзина"/>
                 </div> :
                 <div>

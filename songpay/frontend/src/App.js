@@ -3,10 +3,8 @@ import axios from "axios";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {CartProvider} from "react-use-cart";
 
-
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap'
-
 
 import './static/css/main.css'
 
