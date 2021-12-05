@@ -29,7 +29,7 @@ const Header = () => {
                             <Link to={"/catalog"} className="nav-link px-2 link_gray">Каталог</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={"/basket"} className="nav-link px-2 link_gray">Корзина</Link>
+                            <Link to={"/cart"} className="nav-link px-2 link_gray">Корзина</Link>
                         </li>
                         <li className="nav-item">
                             <Link to={"/lk"} className="nav-link px-2 link_gray">Личный кабинет</Link>

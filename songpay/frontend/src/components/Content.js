@@ -2,6 +2,7 @@ import React, {Fragment, useEffect, useState} from "react";
 import CardsList from "./Axios/Cards";
 import MyLoader from "./Loader";
 
+
 function Content({card, loading}) {
     const [search, setSearch] = useState('');
 

@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {CartProvider} from "react-use-cart";
 
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap'
+
 
 import './static/css/main.css'
 
@@ -15,7 +17,7 @@ import Support from "./page/Support";
 import Error404 from "./page/Error404";
 import Category from "./page/Category";
 import ArrangementID from "./page/ArrangementID";
-import Basket from "./page/Basket";
+import Cart from "./page/Cart";
 
 
 function App() {
@@ -35,29 +37,30 @@ function App() {
     return (
         <div className="container">
             <Router>
-
-                <Header/>
-                <Switch>
-                    <Route exact path="/">
-                        <Content card={cards} loading={loading}/>
-                    </Route>
-                    <Route exact path="/support">
-                        <Support/>
-                    </Route>
-                    <Route exact path="/catalog">
-                        <Category/>
-                    </Route>
-                    <Route exact path="/basket">
-                        <Basket/>
-                    </Route>
-                    <Route exact path="/arrangement/:id">
-                        <ArrangementID card={cards}/>
-                    </Route>
-                    <Route exact path="*">
-                        <Error404/>
-                    </Route>
-                </Switch>
-                <Footer/>
+                <CartProvider>
+                    <Header/>
+                    <Switch>
+                        <Route exact path="/">
+                            <Content card={cards} loading={loading}/>
+                        </Route>
+                        <Route exact path="/support">
+                            <Support/>
+                        </Route>
+                        <Route exact path="/catalog">
+                            <Category/>
+                        </Route>
+                        <Route exact path="/cart">
+                            <Cart/>
+                        </Route>
+                        <Route exact path="/arrangement/:id">
+                            <ArrangementID card={cards}/>
+                        </Route>
+                        <Route exact path="*">
+                            <Error404/>
+                        </Route>
+                    </Switch>
+                    <Footer/>
+                </CartProvider>
             </Router>
         </div>
     );

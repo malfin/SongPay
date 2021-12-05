@@ -1,47 +1,13 @@
-import React, {Fragment, useEffect} from "react";
+import React, {Fragment} from "react";
 import {useParams} from "react-router-dom";
-import {useCart} from "react-use-cart";
-
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 
-const MySwal = withReactContent(Swal)
-
-const ArrangementID = ({card}) => {
-
-    const {addItem, inCart} = useCart();
+const CategoryID = ({card}) => {
 
     let {id} = useParams();
     let sound = card.filter((item) => item.id === +id)[0];
-
-
-    const AddCart = () => {
-        console.log(inCart(sound.id))
-        if (inCart(sound.id)) {
-            MySwal.fire({
-                icon: "warning",
-                title: '<h3 style="background: none">Товар уже в корзине!</h3>',
-                text: 'Товар уже в корзине!',
-            })
-        } else {
-            addItem(sound)
-            MySwal.fire({
-                icon: "info",
-                title: '<h3 style="background: none">Товар успешно добавлен в корзину</h3>',
-                text: 'Товар успешно добавлен в корзину',
-            })
-
-        }
-    }
-
-    useEffect(() => {
-        // eslint-disable-next-line
-        document.title = sound.name
-        // eslint-disable-next-line
-    }, [])
 
     return (
         <Fragment>
@@ -49,7 +15,7 @@ const ArrangementID = ({card}) => {
                 <div className="col">
                     <img src={sound.cover} alt={sound.name} className="card-img-top"/>
                     <br/>
-                    <button className="btn btn-primary btn-lg mt-3" onClick={() => AddCart()}>В корзину</button>
+                    <button className="btn btn-primary btn-lg mt-3">В корзину</button>
                 </div>
                 <div className="col">
                     <h1>{sound.name}</h1>
@@ -83,4 +49,4 @@ const ArrangementID = ({card}) => {
     )
 }
 
-export default ArrangementID;
+export default CategoryID;

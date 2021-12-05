@@ -30,6 +30,18 @@
     color: var(--color);
 }
 
+.btn-danger {
+    border: none;
+    background-color: #EC3D3D;
+}
+
+.text-danger {
+    color: #EC3D3D;
+}
+
+.text-danger:hover {
+    cursor: pointer;
+}
 
 .rhap_container {
     padding: 0 15px !important;
