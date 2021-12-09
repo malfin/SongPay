@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from "react";
+import React, {Fragment} from "react";
 import {useParams} from "react-router-dom";
 import {useCart} from "react-use-cart";
 
@@ -16,10 +16,10 @@ const ArrangementID = ({card}) => {
 
     let {id} = useParams();
     let sound = card.filter((item) => item.id === +id)[0];
+    document.title = sound.name
 
 
     const AddCart = () => {
-        console.log(inCart(sound.id))
         if (inCart(sound.id)) {
             MySwal.fire({
                 icon: "warning",
@@ -36,12 +36,6 @@ const ArrangementID = ({card}) => {
 
         }
     }
-
-    useEffect(() => {
-        // eslint-disable-next-line
-        document.title = sound.name
-        // eslint-disable-next-line
-    }, [])
 
     return (
         <Fragment>

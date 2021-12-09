@@ -1,8 +1,6 @@
 import {Fragment, useEffect} from "react";
 import {useCart} from "react-use-cart";
 
-import empty_cart from '../static/img/empty-cart.png'
-
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
@@ -49,7 +47,6 @@ const Cart = () => {
                     <p>Для того, чтобы заказать аранжировку, перейди на <Link to={"/"}
                                                                               className="text-primary text-decoration-none">главную
                         страницу</Link></p>
-                    <img src={empty_cart} alt="Пустая корзина"/>
                 </div> :
                 <div>
                     <table className="table">

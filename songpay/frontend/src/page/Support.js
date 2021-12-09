@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, {Fragment, useState} from "react";
 import axios from "axios";
 
 import Swal from 'sweetalert2'
@@ -7,16 +7,14 @@ import withReactContent from 'sweetalert2-react-content'
 
 const MySwal = withReactContent(Swal)
 
-const Support = () => {
+const Support = ({title}) => {
+    document.title = title;
+
     const [email, setEmail] = useState('');
     const [messages, setMessages] = useState('');
     const [send, setSend] = useState(false);
     const [error, setError] = useState(false);
 
-
-    useEffect(() => {
-        document.title = 'Поддержка';
-    }, [])
 
     function handleSubmit(e) {
         e.preventDefault();

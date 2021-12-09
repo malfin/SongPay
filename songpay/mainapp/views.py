@@ -1,9 +1,20 @@
 from django.shortcuts import render, get_object_or_404
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 
 from mainapp.models import Arrangement, Category, Order, Key, Support
 
-from mainapp.serializers import CategorySerializer, ArrangementSerializer, KeySerializer, SupportSerializer
+from mainapp.serializers import CategorySerializer, ArrangementSerializer, \
+    KeySerializer, SupportSerializer, OrderSerializer
+
+
+class OrderViewSet(ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
 
 
 class SupportViewSet(ModelViewSet):
@@ -16,9 +27,16 @@ class CategoryViewSet(ModelViewSet):
     serializer_class = CategorySerializer
 
 
+# class ArrangementSetPagination(PageNumberPagination):
+#     page_size = 1
+#     page_size_query_param = 'page_size'
+#     max_page_size = 1000
+
+
 class ArrangementViewSet(ModelViewSet):
     queryset = Arrangement.objects.all()
     serializer_class = ArrangementSerializer
+    # pagination_class = ArrangementSetPagination
 
 
 class KeyViewSet(ModelViewSet):

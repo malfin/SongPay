@@ -8,6 +8,7 @@ router.register('category', mainapp.CategoryViewSet)
 router.register('arrangement', mainapp.ArrangementViewSet)
 router.register('key', mainapp.KeyViewSet)
 router.register('support', mainapp.SupportViewSet)
+router.register('order', mainapp.OrderViewSet)
 
 app_name = 'mainapp'
 

@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from mainapp.models import Category, Arrangement, Key, Support
+from mainapp.models import Category, Arrangement, Key, Support, Order
 
 
 class CategorySerializer(ModelSerializer):
@@ -27,4 +27,12 @@ class ArrangementSerializer(ModelSerializer):
 class SupportSerializer(ModelSerializer):
     class Meta:
         model = Support
+        fields = '__all__'
+
+
+class OrderSerializer(ModelSerializer):
+    arrangement = ArrangementSerializer()
+
+    class Meta:
+        model = Order
         fields = '__all__'

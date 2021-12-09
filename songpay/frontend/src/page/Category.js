@@ -4,7 +4,9 @@ import CategoryList from "../components/Axios/CategoryAxios";
 import MyLoader from "../components/Loader";
 
 
-function Category() {
+function Category({title}) {
+    document.title = title
+
     const [category, setCategory] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -15,18 +17,16 @@ function Category() {
                 setLoading(false)
             })
     ), [])
-    useEffect(() => {
-        document.title = 'Каталог';
-    })
+
 
     return (
         <Fragment>
             <h3>Все категории</h3>
 
             {!loading &&
-            <div className="d-flex justify-content-start flex-wrap">
-                <CategoryList categories={category}/>
-            </div>
+                <div className="d-flex justify-content-start flex-wrap">
+                    <CategoryList categories={category}/>
+                </div>
             }
             {loading && <MyLoader/>}
         </Fragment>

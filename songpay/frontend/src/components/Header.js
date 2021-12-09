@@ -34,6 +34,9 @@ const Header = () => {
                         <li className="nav-item">
                             <Link to={"/lk"} className="nav-link px-2 link_gray">Личный кабинет</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link to={"/login"} className="nav-link px-2 link_gray">Войти</Link>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -1,14 +1,14 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, {Fragment, useState} from "react";
 import CardsList from "./Axios/Cards";
 import MyLoader from "./Loader";
 
 
-function Content({card, loading}) {
+function Content({card, loading, title}) {
     const [search, setSearch] = useState('');
 
-    useEffect(() => {
-        document.title = 'Главная';
-    })
+
+    document.title = title;
+
 
     const filterSearch = card.filter(items => {
         return items.original_name.toLocaleLowerCase().includes(search.toLowerCase())

@@ -1,12 +1,11 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
-const Cards = ({arrangement}) => {
+const CardsDownloads = ({arrangement}) => {
+
     return (
         <div className="card">
-            <Link to={`/arrangement/${arrangement.id}`}
-                  className="card-title"><img src={arrangement.cover} className="card-img-top" alt={arrangement.name}/></Link>
-
+            <img src={arrangement.cover} className="card-img-top" alt={arrangement.name}/>
             <div className="card-body">
                 <Link to={`/arrangement/${arrangement.id}`}
                       className="card-title">{arrangement.name} | {arrangement.key.key}</Link>
@@ -14,17 +13,19 @@ const Cards = ({arrangement}) => {
             </div>
             <div className="card-footer">
                 {arrangement.original_name ? arrangement.original_name : 'Авторская аранжировка'}
+                <a href={arrangement.archive} className="btn btn-primary mt-3">Скачать
+                    архив</a>
             </div>
         </div>
     )
 }
 
-const CardsList = ({cards}) => {
+const CardsDownloadsList = ({cards}) => {
     return (
         <>
-            {cards.map((arrangement) => <Cards key={arrangement.id} arrangement={arrangement}/>)}
+            {cards.map((arrangement) => <CardsDownloads key={arrangement.id} arrangement={arrangement}/>)}
         </>
     )
 }
 
-export default CardsList
+export default CardsDownloadsList
