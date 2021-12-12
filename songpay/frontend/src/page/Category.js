@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment} from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 import CategoryList from "../components/Axios/CategoryAxios";
 import MyLoader from "../components/Loader";
@@ -20,7 +20,7 @@ function Category({title}) {
 
 
     return (
-        <Fragment>
+        <div className="container">
             <h3>Все категории</h3>
 
             {!loading &&
@@ -29,7 +29,7 @@ function Category({title}) {
                 </div>
             }
             {loading && <MyLoader/>}
-        </Fragment>
+        </div>
     )
 
 }

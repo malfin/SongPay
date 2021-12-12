@@ -32,7 +32,9 @@ const LoginForm = ({title}) => {
                     <input type="text" className="form-control" value={password} id="username"
                            placeholder="Пароль" onChange={handleChangePassword}/>
                 </div>
-                <button className="btn btn-primary float-end mb-5" type="submit">Войти</button>
+                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button className="btn btn-primary" type="submit">Войти</button>
+                </div>
             </form>
         </div>
     )

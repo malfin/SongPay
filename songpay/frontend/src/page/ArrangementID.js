@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import {useParams} from "react-router-dom";
 import {useCart} from "react-use-cart";
 
@@ -38,7 +38,7 @@ const ArrangementID = ({card}) => {
     }
 
     return (
-        <Fragment>
+        <div className="container">
             <div className="row">
                 <div className="col">
                     <img src={sound.cover} alt={sound.name} className="card-img-top"/>
@@ -73,7 +73,7 @@ const ArrangementID = ({card}) => {
                 </div>
             </div>
 
-        </Fragment>
+        </div>
     )
 }
 

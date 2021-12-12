@@ -1,4 +1,3 @@
-import {Fragment, useEffect} from "react";
 import {useCart} from "react-use-cart";
 
 import Swal from 'sweetalert2'
@@ -10,10 +9,8 @@ import {Link} from "react-router-dom";
 
 const MySwal = withReactContent(Swal)
 
-const Cart = () => {
-    useEffect(() => {
-        document.title = 'Корзина';
-    }, [])
+const Cart = ({title}) => {
+    document.title = title;
 
     const {isEmpty, totalUniqueItems, items, cartTotal, removeItem, emptyCart} = useCart();
 
@@ -34,7 +31,7 @@ const Cart = () => {
 
 
     return (
-        <Fragment>
+        <div className="container">
             {isEmpty ?
                 <div className="text-center">
                     <h3>Корзина пустая
@@ -82,7 +79,7 @@ const Cart = () => {
                     </div>
                 </div>
             }
-        </Fragment>
+        </div>
     )
 }
 export default Cart

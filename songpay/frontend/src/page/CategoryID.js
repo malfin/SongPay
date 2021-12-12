@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import {useParams} from "react-router-dom";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
@@ -10,7 +10,7 @@ const CategoryID = ({card}) => {
     let sound = card.filter((item) => item.id === +id)[0];
 
     return (
-        <Fragment>
+        <div className="container">
             <div className="row">
                 <div className="col">
                     <img src={sound.cover} alt={sound.name} className="card-img-top"/>
@@ -45,7 +45,7 @@ const CategoryID = ({card}) => {
                 </div>
             </div>
 
-        </Fragment>
+        </div>
     )
 }
 

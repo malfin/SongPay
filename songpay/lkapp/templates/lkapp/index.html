@@ -12,7 +12,7 @@
                 <div class="row grid">
                     {% for item in arrange %}
                         <div class="item">
-                            <a href="{% url 'mainapp:page_sound' item.id %}">
+                            <a href="#">
                                 {% if item.arrangement.cover %}
                                     <img src="{{ item.arrangement.cover.url }}" width="200" height="200"
                                          alt="{{ item.arrangement.name }}">
@@ -21,7 +21,6 @@
                             </a>
                             <span class="btn-download"><a href="{{ item.arrangement.archive.url }}" download=""
                                                           class="btn-download">Скачать Архив</a></span>
-
                         </div>
                     {% endfor %}
                 </div>

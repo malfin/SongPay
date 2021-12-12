@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from "react";
+import React, {useState} from "react";
 import CardsList from "./Axios/Cards";
 import MyLoader from "./Loader";
 
@@ -9,13 +9,12 @@ function Content({card, loading, title}) {
 
     document.title = title;
 
-
     const filterSearch = card.filter(items => {
         return items.original_name.toLocaleLowerCase().includes(search.toLowerCase())
     })
 
     return (
-        <Fragment>
+        <div className="container">
             <h3>Все аранжировки</h3>
             <form>
                 <div className="mb-3">
@@ -32,7 +31,7 @@ function Content({card, loading, title}) {
             }
             {loading && <MyLoader/>}
 
-        </Fragment>
+        </div>
     )
 }
 

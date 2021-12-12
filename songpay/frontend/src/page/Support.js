@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 
 import Swal from 'sweetalert2'
@@ -45,7 +45,7 @@ const Support = ({title}) => {
     }
 
     return (
-        <Fragment>
+        <div className="container">
             <h3 className="text-center">Поддержка</h3>
             <div className="row">
                 <div className="col m-auto">
@@ -71,7 +71,7 @@ const Support = ({title}) => {
                     </form>
                 </div>
             </div>
-        </Fragment>
+        </div>
     )
 }
 export default Support;
