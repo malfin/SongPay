@@ -6,16 +6,10 @@
             <div class="kit_discover">
                 <div class="kit_discover_info">
                     <div class="kit_discover_pic">
-                        <img src="{{ select.cover.url }}" width="280" height="280">
-                        {% if not order.arrangement %}
-                            <a class="kit_discover_add isnt_freebie" kit_id="{{ select.id }}">
-                                В корзину
-                            </a>
-                        {% else %}
-                            <a class="kit_discover_add" href="{{ order.archive.url }}">
-                                Скачать архив
-                            </a>
-                        {% endif %}
+                        <img src="{{ select.cover.url }}" width="280" height="280" alt="{{ select.name }}"/>
+                        <a class="kit_discover_add isnt_freebie" href="{% url 'basketapp:add_cart' select.id %}">
+                            В корзину
+                        </a>
                     </div>
                     <!-- /.kit_discover_pic -->
                     <div class="kit_actions">

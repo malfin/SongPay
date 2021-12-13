@@ -44,5 +44,4 @@ def add_cart(request, pk):
 def remove_cart(request, pk):
     arange = CartBasket.objects.get(id=pk)
     arange.delete()
-    messages.success(request, f'Аранжировка: "{arange.arrangement.name}", успешно удалена из корзины!')
     return HttpResponseRedirect(reverse('basketapp:cart'))

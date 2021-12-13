@@ -54,12 +54,10 @@ def index(request):
 
 
 def page_sound(request, pk):
-    order = Order.objects.get(user=request.user)
     select = get_object_or_404(Arrangement, pk=pk)
     context = {
         'title': select.name,
         'select': select,
-        'order': order,
     }
     return render(request, 'mainapp/page_sound.html', context)
 

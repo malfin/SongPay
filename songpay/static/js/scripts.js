@@ -216,32 +216,6 @@ $(document).ready(function () {
         })
     })
 
-
-    $('.isnt_freebie').click(function (e) {
-        e.preventDefault();
-        $.ajax({
-            url: e.target.href,
-            success: function (data) {
-                if (data.status) {
-                    notyf.success(`${data.message}`);
-                } else {
-                    notyf.error('Ошибка!');
-                }
-
-            }
-        })
-
-        function refreshcart() {
-            let current_basket = $('.side .cart span').text();
-            let new_basket_counter = ++current_basket;
-            $('.side .cart.changeable span').html(new_basket_counter);
-            $('.side .cart.changeable').removeClass('changeable');
-            $('.side .cart').addClass('changed');
-
-        }
-
-    });
-
     // END AJAX //
 
 
