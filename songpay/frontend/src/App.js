@@ -20,6 +20,7 @@ import ArrangementID from "./page/ArrangementID";
 import Cart from "./page/Cart";
 import Cabinet from "./page/Cabinet";
 import LoginForm from "./page/LoginForm";
+import Terms from "./page/Terms";
 
 
 function App() {
@@ -62,6 +63,9 @@ function App() {
                         </Route>
                         <Route exact path="/lk">
                             <Cabinet card={cards} loading={loading}/>
+                        </Route>
+                        <Route exact path="/terms">
+                            <Terms title="Правила"/>
                         </Route>
                         <Route exact path="/login">
                             <LoginForm title="Авторизация"/>

@@ -1,0 +1,53 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        p {
+            text-align: justify;
+        }
+
+        .text-danger {
+            color: #EC3D3D !important;
+        }
+    </style>
+    <div class="middle">
+        <div class="page cart_page">
+            <div class="container">
+                <h3 class="inner_title">Правила</h3>
+                <div class="inner-page law">
+                    <ul>
+                        <li>
+                            <span class="counter">1.</span>
+                            <p> Используя этот сайт, вы соглашаетесь со следующими условиями.</p>
+                        </li>
+                        <li>
+                            <span class="counter">2.</span>
+                            <p>Мы можем вносить изменения в SongPay или ограничивать доступ для всех или отдельных
+                                пользователей без уведомления и ответственности.</p>
+                            <p>Основная причина может быть в технических работах.</p>
+                        </li>
+                        <li>
+                            <span class="counter">3.</span>
+                            <p>
+                                Все продукты, заказанные через SongPay, будут доставлены сразу после покупки в личном
+                                кабинете.</p>
+                            <p class="text-danger">Все продажи окончательны, возврат/обмен не принимаются!</p>
+                        </li>
+                        <li>
+                            <span class="counter">4.</span>
+                            <p>
+                                Если у вас есть проблемы или идеи, отправьте сообщение по адресу <a
+                                    href="mailto:malfin@internet.ru">malfin@internet.ru</a>
+                                или воспользуйтесь специальной формой на странице <a href="{% url 'mainapp:support' %}">Поддержка</a>.
+                                Мы ответим вам в течении 48 часов.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.inner-page -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.page -->
+    </div>
+{% endblock %}

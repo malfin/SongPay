@@ -110,7 +110,7 @@
             <!-- /#change_tmp -->
             <div class="cart changeable">
                 <i></i>
-                <span>0</span>
+
                 <a href="{% url 'basketapp:cart' %}"></a>
             </div>
         </div>
@@ -124,19 +124,19 @@
 <footer>
     <div class="container">
         <div class="copyright">
-            <h3>© 2021 </h3>
-            <span>All rights reserved.</span>
+            <h3>© {% now "Y" %} </h3>
+            <span>Все права защищены</span>
         </div>
         <nav>
             <ul>
                 <li>
-                    <h3>Company</h3>
+                    <h3>Компания</h3>
                 </li>
                 <li>
-                    <a href="">Support service</a>
+                    <a href="{% url 'mainapp:support' %}">Поддержка</a>
                 </li>
                 <li>
-                    <a href="">Terms of service</a>
+                    <a href="{% url 'mainapp:terms' %}">Условия использования</a>
                 </li>
             </ul>
             <ul>
@@ -152,10 +152,7 @@
             </ul>
         </nav>
         <div class="side">
-            <a href="#" class="mail">hello@drumdealer.net</a>
-            <p class="secure">
-                Secure payments via <span class="paypal"></span>
-            </p>
+            <a href="#" class="mail">malfin@internet.ru</a>
         </div>
     </div>
 </footer>

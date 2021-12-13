@@ -17,6 +17,7 @@ urlpatterns = [
     path('', mainapp.index, name='index'),
     path('support/', mainapp.support, name='support'),
     path('category/', mainapp.category, name='category'),
+    path('terms/', mainapp.terms, name='terms'),
     path('category/page/<int:pk>/', mainapp.page_category, name='page_category'),
     path('page/sound/<int:pk>/', mainapp.page_sound, name='page_sound'),
 ]

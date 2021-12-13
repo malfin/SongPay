@@ -85,3 +85,11 @@ def support(request):
         'title': 'поддержка',
     }
     return render(request, 'mainapp/support.html', context)
+
+
+def terms(request):
+    context = {
+        'title': 'условия использования',
+    }
+    return render(request, 'mainapp/terms.html', context)
+

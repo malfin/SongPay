@@ -272,8 +272,8 @@ header .container {
 a.logo {
     width: 64px;
     height: 60px;
-    background: url(../svg/logo_dark.svg) -36px 0 no-repeat;
-    background-size: 200%;
+    background: url(../svg/favicon.svg) 0 no-repeat;
+    background-size: 100%;
     transition: all .3s ease;
 }
 
@@ -929,8 +929,8 @@ footer {
 
 footer .copyright {
     padding: 10px 0 10px 100px;
-    background: url(../svg/logo_dark.svg) -43px -8px no-repeat;
-    background-size: 150px;
+    background: url(../svg/favicon.svg) 0 no-repeat;
+    background-size: 60px;
     color: #fff;
 }
 

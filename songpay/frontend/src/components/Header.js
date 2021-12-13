@@ -29,6 +29,9 @@ const Header = () => {
                             <Link to={"/catalog"} className="nav-link px-2 link_gray">Каталог</Link>
                         </li>
                         <li className="nav-item">
+                            <Link to={"/terms"} className="nav-link px-2 link_gray">Правила</Link>
+                        </li>
+                        <li className="nav-item">
                             <Link to={"/cart"} className="nav-link px-2 link_gray">Корзина</Link>
                         </li>
                         <li className="nav-item">
