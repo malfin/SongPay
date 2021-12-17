@@ -184,3 +184,15 @@ a:hover {
     box-shadow: 0 0 0 0.25rem rgb(68 138 255 / 25%);
 
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--while);
+    transition: all .3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #4689de;
+    transition: all .3s ease-in-out;
+}

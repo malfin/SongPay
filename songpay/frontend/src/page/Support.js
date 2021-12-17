@@ -18,30 +18,38 @@ const Support = ({title}) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        axios.post(`http://127.0.0.1:8000/api/v1/support/`, {email: email, messages: messages})
-            .then(() => {
-                setSend(true)
-                setEmail('')
-                setMessages('')
-                if (!send) {
-                    MySwal.fire({
-                        icon: "info",
-                        title: '<h3 style="background: none">Успешно</h3>',
-                        text: 'Ваше сообщение отправлено!',
-                    })
-                }
-            })
-            .catch(() => {
-                setError(true)
-                if (!error) {
-                    MySwal.fire({
-                        icon: "warning",
-                        title: '<h3 style="background: none">Ошибка</h3>',
-                        text: 'Сервер не доступен!',
-                    })
-                }
+        if (email !== '' || messages !== '') {
+            axios.post(`http://127.0.0.1:8000/api/v1/support/`, {email: email, messages: messages})
+                .then(() => {
+                    setSend(true)
+                    setEmail('')
+                    setMessages('')
+                    if (!send) {
+                        MySwal.fire({
+                            title: '<h3 style="background: none">Успешно</h3>',
+                            text: 'Ваше сообщение отправлено!',
+                        })
+                    }
+                })
+                .catch(() => {
+                    setError(true)
+                    if (!error) {
+                        MySwal.fire({
+                            icon: "warning",
+                            title: '<h3 style="background: none">Ошибка</h3>',
+                            text: 'Сервер не доступен!',
+                        })
+                    }
 
+                })
+        } else {
+            MySwal.fire({
+                icon: "warning",
+                title: '<h3 style="background: none">Ошибка</h3>',
+                text: 'Заполните поля!',
             })
+        }
+
     }
 
     return (

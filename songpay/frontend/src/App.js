@@ -46,17 +46,17 @@ function App() {
                         <Route exact path="/">
                             <Content card={cards}
                                      loading={loading}
-                                     title="Главная"
+                                     title="Главная | SongPay"
                             />
                         </Route>
                         <Route exact path="/support">
-                            <Support title="Поддержка"/>
+                            <Support title="Поддержка | SongPay"/>
                         </Route>
                         <Route exact path="/catalog">
-                            <Category title="Каталог"/>
+                            <Category title="Каталог | SongPay"/>
                         </Route>
                         <Route exact path="/cart">
-                            <Cart title="Корзина"/>
+                            <Cart title="Корзина | SongPay"/>
                         </Route>
                         <Route exact path="/arrangement/:id">
                             <ArrangementID card={cards}/>
@@ -65,13 +65,13 @@ function App() {
                             <Cabinet card={cards} loading={loading}/>
                         </Route>
                         <Route exact path="/terms">
-                            <Terms title="Правила"/>
+                            <Terms title="Правила | SongPay"/>
                         </Route>
                         <Route exact path="/login">
-                            <LoginForm title="Авторизация"/>
+                            <LoginForm title="Авторизация | SongPay"/>
                         </Route>
                         <Route exact path="*">
-                            <Error404/>
+                            <Error404 title="Ошибка 404 | SongPay"/>
                         </Route>
                     </Switch>
                     <Footer/>

@@ -1,9 +1,7 @@
-import {useEffect} from "react";
+const Error404 = ({title}) => {
 
-const Error404 = () => {
-    useEffect(() => {
-        document.title = 'Ошибка 404'
-    }, [])
+    document.title = title
+
     return (
         <div className="text-center m-5">
             <h1>Ошибка 404</h1>
