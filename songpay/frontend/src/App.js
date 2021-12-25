@@ -21,6 +21,7 @@ import Cart from "./page/Cart";
 import Cabinet from "./page/Cabinet";
 import LoginForm from "./page/LoginForm";
 import Terms from "./page/Terms";
+import RegisterForm from "./page/RegisterForm";
 
 
 function App() {
@@ -70,6 +71,9 @@ function App() {
                         </Route>
                         <Route exact path="/login">
                             <LoginForm title="Авторизация | SongPay"/>
+                        </Route>
+                        <Route exact path="/register">
+                            <RegisterForm title="Регистрация | SongPay"/>
                         </Route>
                         <Route>
                             <Error404 title="Ошибка 404 | SongPay"/>

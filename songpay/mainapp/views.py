@@ -1,11 +1,19 @@
 from django.shortcuts import render, get_object_or_404
+from rest_framework.mixins import CreateModelMixin
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ModelViewSet, GenericViewSet
 
+from lkapp.models import UserProfile
 from mainapp.models import Arrangement, Category, Order, Key, Support
 
 from mainapp.serializers import CategorySerializer, ArrangementSerializer, \
-    KeySerializer, SupportSerializer, OrderSerializer
+    KeySerializer, SupportSerializer, OrderSerializer, UserSerializer
+
+
+class CreateUserView(CreateModelMixin, GenericViewSet):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny]
 
 
 class OrderViewSet(ModelViewSet):

@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import {Fragment} from "react";
 
 const Header = ({user}) => {
     const logout = () => {
@@ -44,9 +45,17 @@ const Header = ({user}) => {
                         <li className="nav-item">
                             <Link to={"/lk"} className="nav-link px-2 link_gray">Личный кабинет</Link>
                         </li>
-                        {!user && <li className="nav-item">
-                            <Link to={"/login"} className="nav-link px-2 link_gray">Войти</Link>
-                        </li>}
+
+                        {!user &&
+                            <Fragment>
+                                <li className="nav-item">
+                                    <Link to={"/register"} className="nav-link px-2 link_gray">Регистрация</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link to={"/login"} className="nav-link px-2 link_gray">Войти</Link>
+                                </li>
+                            </Fragment>
+                        }
                         {user &&
                             <li className="nav-item"><Link to={"/logout"}
                                                            className="nav-link px-2 link_gray" onClick={logout}>Выйти

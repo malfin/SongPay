@@ -1,5 +1,7 @@
+from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 
+from lkapp.models import UserProfile
 from mainapp.models import Category, Arrangement, Key, Support, Order
 
 
@@ -36,3 +38,23 @@ class OrderSerializer(ModelSerializer):
     class Meta:
         model = Order
         fields = '__all__'
+
+
+class UserSerializer(ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    class Meta:
+        model = UserProfile
+        fields = (
+            'username',
+            'email',
+            'password',
+            'first_name',
+            'last_name',
+        )
+
+    def create(self, validated_data):
+        user = super(UserSerializer, self).create(validated_data)
+        user.set_password(validated_data['password'])
+        user.save()
+        return user

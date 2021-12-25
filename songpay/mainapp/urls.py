@@ -9,6 +9,7 @@ router.register('arrangement', mainapp.ArrangementViewSet)
 router.register('key', mainapp.KeyViewSet)
 router.register('support', mainapp.SupportViewSet)
 router.register('order', mainapp.OrderViewSet)
+router.register('register', mainapp.CreateUserView)
 
 app_name = 'mainapp'
 

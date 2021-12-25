@@ -26,7 +26,7 @@ const LoginForm = ({title}) => {
         // e.preventDefault();
         // console.log('username: ', username)
         // console.log('password: ', password)
-        axios.post('http://localhost:8000/api/v1/token/', {
+        axios.post('http://127.0.0.1:8000/api/v1/token/', {
             username: username,
             password: password,
         }).then(function (res) {
