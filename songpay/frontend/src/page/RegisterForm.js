@@ -47,21 +47,14 @@ const RegisterForm = ({title}) => {
             last_name: last_name,
             email: email
         }).then(function (res) {
-            console.log(res, "123")
             localStorage.setItem('token', res.data.access);
             localStorage.setItem('user', res.config.data);
-            MySwal.fire({
-                title: '<h3 style="background: none">Успех!</h3>',
-                text: 'Вы успешно зарегистрировались!',
-            })
             window.location = "/"
         }).catch(function (err) {
             MySwal.fire({
                 title: '<h3 style="background: none">Ошибка</h3>',
                 text: err.response.data.username[0],
             })
-            // alert(err.response.data.username[0])
-            // console.log(err.response.data.username[0])
         })
     }
 
