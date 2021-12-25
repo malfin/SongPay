@@ -5,8 +5,6 @@ import MyLoader from "./Loader";
 
 function Content({card, loading, title}) {
     const [search, setSearch] = useState('');
-
-
     document.title = title;
 
     const filterSearch = card.filter(items => {

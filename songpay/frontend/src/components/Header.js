@@ -1,6 +1,13 @@
 import {Link} from 'react-router-dom';
 
-const Header = () => {
+const Header = ({user}) => {
+    const logout = () => {
+        localStorage.setItem('token', null);
+        localStorage.setItem('refreshToken', null);
+        localStorage.setItem('user', null);
+        window.location = '/'
+    }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
@@ -37,9 +44,14 @@ const Header = () => {
                         <li className="nav-item">
                             <Link to={"/lk"} className="nav-link px-2 link_gray">Личный кабинет</Link>
                         </li>
-                        <li className="nav-item">
+                        {!user && <li className="nav-item">
                             <Link to={"/login"} className="nav-link px-2 link_gray">Войти</Link>
-                        </li>
+                        </li>}
+                        {user &&
+                            <li className="nav-item"><Link to={"/logout"}
+                                                           className="nav-link px-2 link_gray" onClick={logout}>Выйти
+                                | {user && user.username}</Link></li>
+                        }
                     </ul>
                 </div>
             </div>

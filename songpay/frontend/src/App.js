@@ -28,6 +28,7 @@ function App() {
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    let user = JSON.parse(localStorage.getItem('user'))
 
     useEffect(() => {
         axios.get(`http://127.0.0.1:8000/api/v1/arrangement/`)
@@ -41,7 +42,7 @@ function App() {
         <div className="container">
             <Router>
                 <CartProvider>
-                    <Header/>
+                    <Header user={user}/>
                     <Switch>
                         <Route exact path="/">
                             <Content card={cards}
@@ -62,7 +63,7 @@ function App() {
                             <ArrangementID card={cards}/>
                         </Route>
                         <Route exact path="/lk">
-                            <Cabinet card={cards} loading={loading}/>
+                            <Cabinet card={cards} loading={loading} user={user} token={localStorage.getItem("token")}/>
                         </Route>
                         <Route exact path="/terms">
                             <Terms title="Правила | SongPay"/>
@@ -70,7 +71,7 @@ function App() {
                         <Route exact path="/login">
                             <LoginForm title="Авторизация | SongPay"/>
                         </Route>
-                        <Route exact path="*">
+                        <Route>
                             <Error404 title="Ошибка 404 | SongPay"/>
                         </Route>
                     </Switch>

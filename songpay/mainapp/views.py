@@ -1,9 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.viewsets import ModelViewSet
 
 from mainapp.models import Arrangement, Category, Order, Key, Support
@@ -15,16 +11,24 @@ from mainapp.serializers import CategorySerializer, ArrangementSerializer, \
 class OrderViewSet(ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        queryset = self.queryset
+        query_set = queryset.filter(user=self.request.user)
+        return query_set
 
 
 class SupportViewSet(ModelViewSet):
     queryset = Support.objects.all()
     serializer_class = SupportSerializer
+    permission_classes = [AllowAny]
 
 
 class CategoryViewSet(ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    permission_classes = [AllowAny]
 
 
 # class ArrangementSetPagination(PageNumberPagination):
@@ -36,6 +40,7 @@ class CategoryViewSet(ModelViewSet):
 class ArrangementViewSet(ModelViewSet):
     queryset = Arrangement.objects.all()
     serializer_class = ArrangementSerializer
+    permission_classes = [AllowAny]
     # pagination_class = ArrangementSetPagination
 
 
@@ -92,4 +97,3 @@ def terms(request):
         'title': 'условия использования',
     }
     return render(request, 'mainapp/terms.html', context)
-
