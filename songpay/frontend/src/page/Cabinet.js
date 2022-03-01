@@ -18,7 +18,6 @@ const Cabinet = ({token, user}) => {
                 }
             })
                 .then((result) => {
-                    // console.log("data: ", result.data)
                     setCards(result.data)
                 })
         } else {

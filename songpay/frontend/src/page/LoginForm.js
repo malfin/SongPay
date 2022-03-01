@@ -1,11 +1,8 @@
 import {useState} from "react";
 import axios from "axios";
 
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import {toast} from "react-toastify";
 
-
-const MySwal = withReactContent(Swal)
 
 const LoginForm = ({title}) => {
     document.title = title
@@ -23,9 +20,7 @@ const LoginForm = ({title}) => {
     }
 
     function handleSubmit(e) {
-        // e.preventDefault();
-        // console.log('username: ', username)
-        // console.log('password: ', password)
+        e.preventDefault();
         axios.post('http://127.0.0.1:8000/api/v1/token/', {
             username: username,
             password: password,
@@ -33,18 +28,12 @@ const LoginForm = ({title}) => {
             // console.log(res)
             localStorage.setItem('token', res.data.access);
             localStorage.setItem('user', res.config.data);
-            // MySwal.fire({
-            //     title: '<h3 style="background: none">Успешно</h3>',
-            //     text: 'Вы успешно авторизовались!',
-            // })
-            window.location = "/"
+            window.location = '/'
+            toast.success("Вы успешно авторизовались!")
         }).catch(function () {
-            MySwal.fire({
-                title: '<h3 style="background: none">Ошибка</h3>',
-                text: 'Проверьте правильность введённых данных!',
-            })
+            toast.error('Не верный логин или пароль!')
         })
-        e.preventDefault();
+
     }
 
     return (

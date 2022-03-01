@@ -1,14 +1,8 @@
 import {useState} from "react";
 import axios from "axios";
-
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-
-
-const MySwal = withReactContent(Swal)
+import {toast} from "react-toastify";
 
 const RegisterForm = ({title}) => {
-
     document.title = title
 
 
@@ -49,12 +43,10 @@ const RegisterForm = ({title}) => {
         }).then(function (res) {
             localStorage.setItem('token', res.data.access);
             localStorage.setItem('user', res.config.data);
-            window.location = "/"
-        }).catch(function (err) {
-            MySwal.fire({
-                title: '<h3 style="background: none">Ошибка</h3>',
-                text: err.response.data.username[0],
-            })
+            toast.success("Вы успешно зарегистрировались")
+            window.location = '/'
+        }).catch(function (error) {
+            toast.error(error.message)
         })
     }
 

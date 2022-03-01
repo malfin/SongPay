@@ -8,6 +8,9 @@ import 'bootstrap/dist/js/bootstrap'
 
 import './static/css/main.css'
 
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Content from "./components/Content";
@@ -41,6 +44,7 @@ function App() {
 
     return (
         <div className="container">
+            <ToastContainer/>
             <Router>
                 <CartProvider>
                     <Header user={user}/>
@@ -61,7 +65,7 @@ function App() {
                             <Cart title="Корзина | SongPay"/>
                         </Route>
                         <Route exact path="/arrangement/:id">
-                            <ArrangementID card={cards}/>
+                            <ArrangementID />
                         </Route>
                         <Route exact path="/lk">
                             <Cabinet card={cards} loading={loading} user={user} token={localStorage.getItem("token")}/>

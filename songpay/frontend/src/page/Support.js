@@ -1,11 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
 
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import {toast} from "react-toastify";
 
-
-const MySwal = withReactContent(Swal)
 
 const Support = ({title}) => {
     document.title = title;
@@ -13,7 +10,6 @@ const Support = ({title}) => {
     const [email, setEmail] = useState('');
     const [messages, setMessages] = useState('');
     const [send, setSend] = useState(false);
-    const [error, setError] = useState(false);
 
 
     function handleSubmit(e) {
@@ -25,29 +21,14 @@ const Support = ({title}) => {
                     setEmail('')
                     setMessages('')
                     if (!send) {
-                        MySwal.fire({
-                            title: '<h3 style="background: none">Успешно</h3>',
-                            text: 'Ваше сообщение отправлено!',
-                        })
+                        toast.success('Ваше сообщение отправлено!')
                     }
                 })
-                .catch(() => {
-                    setError(true)
-                    if (!error) {
-                        MySwal.fire({
-                            icon: "warning",
-                            title: '<h3 style="background: none">Ошибка</h3>',
-                            text: 'Сервер не доступен!',
-                        })
-                    }
-
+                .catch(function (error) {
+                    toast.error(error.message)
                 })
         } else {
-            MySwal.fire({
-                icon: "warning",
-                title: '<h3 style="background: none">Ошибка</h3>',
-                text: 'Заполните поля!',
-            })
+            toast.info('Заполните поля!')
         }
 
     }
