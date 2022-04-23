@@ -33,9 +33,6 @@ const Header = ({user}) => {
                         <li className="nav-item">
                             <Link to={"/support"} className="nav-link px-2 link_gray">Поддержка</Link>
                         </li>
-                        {/*<li className="nav-item">*/}
-                        {/*    <Link to={"/catalog"} className="nav-link px-2 link_gray">Каталог</Link>*/}
-                        {/*</li>*/}
                         <li className="nav-item">
                             <Link to={"/terms"} className="nav-link px-2 link_gray">Правила</Link>
                         </li>

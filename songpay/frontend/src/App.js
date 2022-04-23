@@ -16,7 +16,6 @@ import Footer from "./components/Footer";
 import Content from "./components/Content";
 import Support from "./page/Support";
 import Error404 from "./page/Error404";
-import Category from "./page/Category";
 
 import ArrangementID from "./page/ArrangementID";
 
@@ -57,9 +56,6 @@ function App() {
                         </Route>
                         <Route exact path="/support">
                             <Support title="Поддержка | SongPay"/>
-                        </Route>
-                        <Route exact path="/catalog">
-                            <Category title="Каталог | SongPay"/>
                         </Route>
                         <Route exact path="/cart">
                             <Cart title="Корзина | SongPay"/>
