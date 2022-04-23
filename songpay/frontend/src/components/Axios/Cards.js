@@ -1,30 +1,34 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
-const Cards = ({arrangement}) => {
-    return (
-        <div className="card">
-            <Link to={`/arrangement/${arrangement.id}`}
-                  className="card-title"><img src={arrangement.cover} className="card-img-top" alt={arrangement.name}/></Link>
-
-            <div className="card-body">
-                <Link to={`/arrangement/${arrangement.id}`}
-                      className="card-title">{arrangement.name} | {arrangement.key.key}</Link>
-                <p className="card-text">{arrangement.price} руб.</p>
-            </div>
-            <div className="card-footer">
-                {arrangement.original_name ? arrangement.original_name : 'Авторская аранжировка'}
-            </div>
-        </div>
-    )
-}
-
 const CardsList = ({cards}) => {
     return (
         <>
-            {cards.map((arrangement) => <Cards key={arrangement.id} arrangement={arrangement}/>)}
+            {cards.map((item) =>
+                <div className="card" key={item.id}>
+                    <Link to={`/arrangement/${item.id}`}
+                          className="card-title"><img src={item.cover} className="card-img-top"
+                                                      alt={item.name}/></Link>
+
+                    <div className="card-body">
+                        <Link to={`/arrangement/${item.id}`}
+                              className="card-title">{item.name} | {item.key.key}</Link>
+                        <p className="card-text">{item.price} руб.</p>
+                    </div>
+                    <div className="card-footer">
+                        {item.original_name ? item.original_name : 'Авторская аранжировка'}
+                    </div>
+                </div>)}
         </>
     )
 }
+
+// const CardsList = ({cards}) => {
+//     return (
+//         <>
+//             {cards.map((arrangement) => <Cards key={arrangement.id} arrangement={arrangement}/>)}
+//         </>
+//     )
+// }
 
 export default CardsList
