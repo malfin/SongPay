@@ -44,24 +44,24 @@ const Header = ({user}) => {
                         </li>
 
                         {!user &&
-                            <Fragment>
-                                <li className="nav-item">
-                                    <Link to={"/register"} className="nav-link px-2 link_gray">Регистрация</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to={"/login"} className="nav-link px-2 link_gray">Войти</Link>
-                                </li>
-                            </Fragment>
+                        <Fragment>
+                            <li className="nav-item">
+                                <Link to={"/register"} className="nav-link px-2 link_gray">Регистрация</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to={"/login"} className="nav-link px-2 link_gray">Авторизация</Link>
+                            </li>
+                        </Fragment>
                         }
                         {user &&
-                            <Fragment>
-                                <li className="nav-item">
-                                    <Link to={"/lk"} className="nav-link px-2 link_gray">Личный кабинет</Link>
-                                </li>
-                                <li className="nav-item"><Link to={"#"}
-                                                               className="nav-link px-2 link_gray" onClick={logout}>Выйти
-                                    | {user && user.username}</Link></li>
-                            </Fragment>
+                        <Fragment>
+                            <li className="nav-item">
+                                <Link to={"/lk"} className="nav-link px-2 link_gray">Личный кабинет</Link>
+                            </li>
+                            <li className="nav-item"><Link to={"#"}
+                                                           className="nav-link px-2 link_gray" onClick={logout}>Выйти
+                                | {user && user.username}</Link></li>
+                        </Fragment>
 
                         }
                     </ul>

@@ -45,7 +45,7 @@ class Arrangement(models.Model):
 
     class Meta:
         ordering = ['-date']
-        verbose_name = 'аранжировка'
+        verbose_name = 'аранжировку'
         verbose_name_plural = 'аранжировки'
 
 

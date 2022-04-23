@@ -19,11 +19,18 @@ const CardsDownloads = ({arrangement}) => {
 }
 
 const CardsDownloadsList = ({cards}) => {
-    return (
-        <>
-            {cards.map((arrangement) => <CardsDownloads key={arrangement.id} arrangement={arrangement}/>)}
-        </>
-    )
+    if (cards.length === 0) {
+        return (
+            <>
+                <h3>У вас нету попкупок!</h3>
+            </>
+
+        )
+    } else {
+        return (
+            cards.map((arrangement) => <CardsDownloads key={arrangement.id} arrangement={arrangement}/>)
+        )
+    }
 }
 
 export default CardsDownloadsList
