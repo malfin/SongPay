@@ -93,7 +93,6 @@ svg {
     font-size: 18px;
     color: var(--color);
     font-weight: 700;
-    margin: 25px 0 10px 0;
     text-decoration: none;
 }
 
@@ -101,7 +100,7 @@ svg {
     width: 25%;
     border: none;
     height: calc(25% - 50px);
-    margin: 0 40px 40px 0;
+    margin: 25px 40px 40px 0;
     background-color: var(--link-gray-hover) !important;
 }
 
@@ -129,6 +128,10 @@ textarea {
     transform: translateY(-15px);
     transition: all 0.3s ease-in-out;
     box-shadow: 0 2px 8px var(--box-shadow);
+}
+
+.card-title{
+    margin-bottom: 0;
 }
 
 .card-body {
