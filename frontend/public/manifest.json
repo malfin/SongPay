@@ -18,7 +18,7 @@
       "type": "image/x-icon"
     },
     {
-      "src": "favicon16.ico",
+      "src": "favicon24.ico",
       "sizes": "16x16",
       "type": "image/x-icon"
     },
@@ -33,10 +33,10 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/?source=pwa",
+  "start_url": "/",
   "scope": "/",
+  "description": "SongPay - Song it is EveryDay ^_^",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "description": "SongPay - Pay Song EveryDay ^_^"
+  "background_color": "#ffffff"
 }
