@@ -33,8 +33,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/?source=pwa",
-  "scope": "/",
+  "start_url": "/songpay",
+  "scope": "/songpay",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
