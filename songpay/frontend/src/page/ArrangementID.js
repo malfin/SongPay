@@ -1,15 +1,15 @@
-import React, {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
-import {useCart} from "react-use-cart";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useCart } from "react-use-cart";
 
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import axios from "axios";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 const ArrangementID = () => {
 
-    const {addItem, inCart} = useCart();
+    const { addItem, inCart } = useCart();
     const [cards, setCards] = useState('');
     const [cover, setCover] = useState('');
     const [name, setName] = useState('');
@@ -20,10 +20,10 @@ const ArrangementID = () => {
     const [audioFile, setAudioFile] = useState('');
     const [text, setText] = useState('');
 
-    let {id} = useParams();
+    let { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/v1/arrangement/${id}/`)
+        axios.get(`https://api.malfinbeats.ru/api/v1/arrangement/${id}/`)
             .then((result) => {
                 setCards(result.data)
                 setCover(result.data.cover)
@@ -54,8 +54,8 @@ const ArrangementID = () => {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <img src={cover} alt={name} className="card-img-top"/>
-                    <br/>
+                    <img src={cover} alt={name} className="card-img-top" />
+                    <br />
                     <button className="btn btn-primary btn-lg mt-3" onClick={() => AddCart()}>В корзину</button>
                 </div>
                 <div className="col">

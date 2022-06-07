@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {CartProvider} from "react-use-cart";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { CartProvider } from "react-use-cart";
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap'
 
 import './static/css/main.css'
 
-import {ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Header from "./components/Header";
@@ -34,7 +34,7 @@ function App() {
     let user = JSON.parse(localStorage.getItem('user'))
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/v1/arrangement/`)
+        axios.get(`https://api.malfinbeats.ru/api/v1/arrangement/`)
             .then((result) => {
                 setCards(result.data)
                 setLoading(false)
@@ -43,43 +43,43 @@ function App() {
 
     return (
         <div className="container">
-            <ToastContainer/>
+            <ToastContainer />
             <Router>
                 <CartProvider>
-                    <Header user={user}/>
+                    <Header user={user} />
                     <Switch>
                         <Route exact path="/">
                             <Content card={cards}
-                                     loading={loading}
-                                     title="Главная | SongPay"
+                                loading={loading}
+                                title="Главная | SongPay"
                             />
                         </Route>
                         <Route exact path="/support">
-                            <Support title="Поддержка | SongPay"/>
+                            <Support title="Поддержка | SongPay" />
                         </Route>
                         <Route exact path="/cart">
-                            <Cart title="Корзина | SongPay"/>
+                            <Cart title="Корзина | SongPay" />
                         </Route>
                         <Route exact path="/arrangement/:id">
                             <ArrangementID />
                         </Route>
                         <Route exact path="/lk">
-                            <Cabinet card={cards} loading={loading} user={user} token={localStorage.getItem("token")}/>
+                            <Cabinet card={cards} loading={loading} user={user} token={localStorage.getItem("token")} />
                         </Route>
                         <Route exact path="/terms">
-                            <Terms title="Правила | SongPay"/>
+                            <Terms title="Правила | SongPay" />
                         </Route>
                         <Route exact path="/login">
-                            <LoginForm title="Авторизация | SongPay"/>
+                            <LoginForm title="Авторизация | SongPay" />
                         </Route>
                         <Route exact path="/register">
-                            <RegisterForm title="Регистрация | SongPay"/>
+                            <RegisterForm title="Регистрация | SongPay" />
                         </Route>
                         <Route>
-                            <Error404 title="Ошибка 404 | SongPay"/>
+                            <Error404 title="Ошибка 404 | SongPay" />
                         </Route>
                     </Switch>
-                    <Footer/>
+                    <Footer />
                 </CartProvider>
             </Router>
         </div>

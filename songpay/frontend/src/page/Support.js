@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 
-const Support = ({title}) => {
+const Support = ({ title }) => {
     document.title = title;
 
     const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ const Support = ({title}) => {
     function handleSubmit(e) {
         e.preventDefault();
         if (email !== '' || messages !== '') {
-            axios.post(`http://127.0.0.1:8000/api/v1/support/`, {email: email, messages: messages})
+            axios.post(`https://api.malfinbeats.ru/api/v1/support/`, { email: email, messages: messages })
                 .then(() => {
                     setSend(true)
                     setEmail('')
@@ -47,14 +47,14 @@ const Support = ({title}) => {
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
                             <input type="email" className="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp" name="email" value={email} placeholder="Email"
-                                   onChange={(e) => setEmail(e.target.value)} required/>
+                                aria-describedby="emailHelp" name="email" value={email} placeholder="Email"
+                                onChange={(e) => setEmail(e.target.value)} required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="floatingTextarea2" className="form-label">Ваше обращение</label>
                             <textarea className="form-control" name="messages" value={messages}
-                                      placeholder="Ваше обращение"
-                                      id="floatingTextarea2" onChange={(e) => setMessages(e.target.value)} required/>
+                                placeholder="Ваше обращение"
+                                id="floatingTextarea2" onChange={(e) => setMessages(e.target.value)} required />
                         </div>
                         <button type="submit" className="btn btn-primary">Отправить</button>
                     </form>

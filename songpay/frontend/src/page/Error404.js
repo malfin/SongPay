@@ -1,5 +1,4 @@
-const Error404 = ({title}) => {
-
+const Error404 = ({ title }) => {
     document.title = title
 
     return (

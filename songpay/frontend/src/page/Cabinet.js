@@ -1,8 +1,8 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import CardsDownloadsList from "../components/Axios/CardsDownloads";
 
-const Cabinet = ({token, user}) => {
+const Cabinet = ({ token, user }) => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
@@ -12,7 +12,7 @@ const Cabinet = ({token, user}) => {
 
     useEffect(() => {
         if (user) {
-            axios.get(`http://127.0.0.1:8000/api/v1/order/?user=${user.username}`, {
+            axios.get(`https://api.malfinbeats.ru/api/v1/order/?user=${user.username}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -23,7 +23,7 @@ const Cabinet = ({token, user}) => {
         } else {
             window.location = '/login';
         }
-// eslint-disable-next-line
+        // eslint-disable-next-line
     }, [])
 
     return (
@@ -33,7 +33,7 @@ const Cabinet = ({token, user}) => {
                 <Fragment>
                     <h3>Личный кабинет</h3>
                     <div className="d-flex justify-content-between flex-wrap">
-                        <CardsDownloadsList cards={cards}/>
+                        <CardsDownloadsList cards={cards} />
                     </div>
                 </Fragment>}
 

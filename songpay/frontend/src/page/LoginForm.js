@@ -1,10 +1,10 @@
-import {useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 
-const LoginForm = ({title}) => {
+const LoginForm = ({ title }) => {
     document.title = title
 
 
@@ -21,7 +21,7 @@ const LoginForm = ({title}) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/v1/token/', {
+        axios.post('https://api.malfinbeats.ru/api/v1/token/', {
             username: username,
             password: password,
         }).then(function (res) {
@@ -43,12 +43,12 @@ const LoginForm = ({title}) => {
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label">Имя пользователя</label>
                     <input type="text" className="form-control" value={username} id="username"
-                           placeholder="Имя пользователя" onChange={handleChangeUsername}/>
+                        placeholder="Имя пользователя" onChange={handleChangeUsername} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Пароль</label>
                     <input type="password" className="form-control" value={password} id="password"
-                           placeholder="Пароль" onChange={handleChangePassword}/>
+                        placeholder="Пароль" onChange={handleChangePassword} />
                 </div>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button className="btn btn-primary" type="submit">Войти</button>
